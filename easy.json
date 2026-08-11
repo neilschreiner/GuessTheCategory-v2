@@ -1,0 +1,62 @@
+[
+  {
+    "id": "easy_001",
+    "clues": [
+      "You wear them on your hands",
+      "Keeps them warm",
+      "Comes in pairs",
+      "Can be made of wool or leather",
+      "Used in cold weather"
+    ],
+    "answer": "Gloves",
+    "acceptableAnswers": ["gloves", "glove", "pair of gloves"]
+  },
+  {
+    "id": "easy_002",
+    "clues": [
+      "Yellow fruit",
+      "Peeled before eating",
+      "Grows in bunches on trees",
+      "High in potassium",
+      "Monkeys love them"
+    ],
+    "answer": "Banana",
+    "acceptableAnswers": ["banana", "bananas"]
+  },
+  {
+    "id": "easy_003",
+    "clues": [
+      "Has four wheels",
+      "Runs on gas or electricity",
+      "Driven on roads",
+      "Requires a license to operate",
+      "Parked in a garage or driveway"
+    ],
+    "answer": "Car",
+    "acceptableAnswers": ["car", "cars", "automobile", "auto"]
+  },
+  {
+    "id": "easy_004",
+    "clues": [
+      "Used to capture photos",
+      "Has a lens and a shutter",
+      "Can record video as well",
+      "Built into almost every smartphone",
+      "Say 'Cheese!' when using it"
+    ],
+    "answer": "Camera",
+    "acceptableAnswers": ["camera", "digital camera", "cameras"]
+  },
+  {
+    "id": "easy_005",
+    "clues": [
+      "Loyal four-legged pet",
+      "Barks at strangers",
+      "Loves playing fetch and walking on a leash",
+      "Known as man's best friend",
+      "Can be a Golden Retriever, Beagle, or Poodle"
+    ],
+    "answer": "Dog",
+    "acceptableAnswers": ["dog", "dogs", "puppy", "canine"]
+  }
+]

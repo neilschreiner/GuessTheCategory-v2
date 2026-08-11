@@ -1,0 +1,38 @@
+[
+  {
+    "id": "med_001",
+    "clues": [
+      "Orbits the Earth once every 27 days",
+      "Has distinct phases like crescent and gibbous",
+      "Causes ocean tides on Earth",
+      "Site of the Apollo 11 landing in 1969",
+      "Earth's only natural satellite"
+    ],
+    "answer": "The Moon",
+    "acceptableAnswers": ["moon", "the moon"]
+  },
+  {
+    "id": "med_002",
+    "clues": [
+      "Uses light reflection through glass prisms",
+      "Produces a spectrum of rainbow colors",
+      "Formed when sunlight passes through raindrops",
+      "Optical phenomenon in the atmosphere",
+      "Refraction of light"
+    ],
+    "answer": "Rainbow",
+    "acceptableAnswers": ["rainbow", "rainbows"]
+  },
+  {
+    "id": "med_003",
+    "clues": [
+      "Contains millions of stars, gas, and dust",
+      "Held together by gravity",
+      "Our solar system lives in the Milky Way",
+      "Can be spiral, elliptical, or irregular",
+      "Andromeda is our nearest neighbor"
+    ],
+    "answer": "Galaxy",
+    "acceptableAnswers": ["galaxy", "galaxies", "milky way"]
+  }
+]

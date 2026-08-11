@@ -1,0 +1,26 @@
+[
+  {
+    "id": "hard_001",
+    "clues": [
+      "Discovered in 1928 by Alexander Fleming",
+      "Produced naturally by Penicillium mold",
+      "Revolutionized medicine in the 20th century",
+      "Fights bacterial infections",
+      "The world's first widely used antibiotic"
+    ],
+    "answer": "Penicillin",
+    "acceptableAnswers": ["penicillin", "penicilin"]
+  },
+  {
+    "id": "hard_002",
+    "clues": [
+      "Discovered in 1912 by Victor Hess",
+      "High-energy particles traveling from outer space",
+      "Composed mostly of protons and atomic nuclei",
+      "Interacts with Earth's atmosphere to create air showers",
+      "Originates from supernovae and distant galactic events"
+    ],
+    "answer": "Cosmic Rays",
+    "acceptableAnswers": ["cosmic rays", "cosmic ray", "cosmic radiation"]
+  }
+]

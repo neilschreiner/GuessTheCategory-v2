@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ultra_001",
+    "clues": [
+      "Formulated by Albert Einstein in 1915",
+      "Describes gravity as curvature of spacetime",
+      "Predicted light bending around massive objects and gravitational waves",
+      "Replaced Newton's law of universal gravitation",
+      "Equation: G_μν + Λg_μν = 8πG/c^4 T_μν"
+    ],
+    "answer": "General Relativity",
+    "acceptableAnswers": ["general relativity", "theory of general relativity", "relativity"]
+  }
+]
