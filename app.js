@@ -80,7 +80,7 @@ async function loadCategoryData(difficulty) {
     startNewRound();
   } catch (err) {
     console.error('Failed to load question database:', err);
-    feedbackEl.textContent = 'Error loading questions. Make sure JSON files are in /data/';
+    feedbackEl.textContent = 'Error loading questions. Make sure JSON files exist in /data/';
     feedbackEl.className = 'feedback-error';
   }
 }
@@ -92,6 +92,7 @@ function startNewRound() {
   currentClueIndex = 0;
   guessInput.value = '';
   guessInput.disabled = false;
+  submitBtn.style.display = 'inline-block';
   submitBtn.disabled = false;
   nextBtn.style.display = 'none';
   feedbackEl.textContent = '';
@@ -107,7 +108,7 @@ function startNewRound() {
   }
 
   if (available.length === 0) {
-    feedbackEl.textContent = 'No questions available in this category.';
+    feedbackEl.textContent = 'No questions available in this level.';
     return;
   }
 
@@ -135,10 +136,10 @@ function renderClues() {
     
     if (i <= currentClueIndex) {
       card.classList.add('revealed');
-      card.innerHTML = `<span class="clue-num">Clue ${i + 1}:</span> ${activeQuestion.clues[i]}`;
+      card.innerHTML = `<span class="clue-badge">CLUE ${i + 1}</span><span class="clue-text">${activeQuestion.clues[i]}</span>`;
     } else {
       card.classList.add('locked');
-      card.innerHTML = `<span class="clue-num">Clue ${i + 1}:</span> 🔒 Locked`;
+      card.innerHTML = `<span class="clue-badge">CLUE ${i + 1}</span><span class="clue-text">🔒 Locked Clue</span>`;
     }
     
     cluesContainer.appendChild(card);
@@ -163,7 +164,7 @@ function handleGuessSubmit() {
   } else {
     currentClueIndex++;
     if (currentClueIndex < 5) {
-      feedbackEl.textContent = `Incorrect guess. Revealing Clue ${currentClueIndex + 1}!`;
+      feedbackEl.textContent = `Incorrect! Clue ${currentClueIndex + 1} revealed.`;
       feedbackEl.className = 'feedback-error';
       renderClues();
       guessInput.value = '';
@@ -196,7 +197,7 @@ function handleWin() {
   gameOver = true;
   stopTimer();
   guessInput.disabled = true;
-  submitBtn.disabled = true;
+  submitBtn.style.display = 'none';
   nextBtn.style.display = 'inline-block';
 
   // Reveal all clues
@@ -206,7 +207,7 @@ function handleWin() {
   const clueUsed = currentClueIndex + 1;
   const updatedStats = window.GTCStats.recordWin(currentDifficulty, clueUsed, activeQuestion.id);
 
-  feedbackEl.innerHTML = `🎉 <strong>Correct!</strong> The answer was <strong>${activeQuestion.answer}</strong>.<br>Current Streak: <strong>${updatedStats.currentStreak}</strong>!`;
+  feedbackEl.innerHTML = `🎉 <strong>Correct!</strong> Answer: <strong>${activeQuestion.answer}</strong>. (Streak: ${updatedStats.currentStreak})`;
   feedbackEl.className = 'feedback-success';
 
   triggerConfetti();
@@ -217,12 +218,12 @@ function handleLoss() {
   gameOver = true;
   stopTimer();
   guessInput.disabled = true;
-  submitBtn.disabled = true;
+  submitBtn.style.display = 'none';
   nextBtn.style.display = 'inline-block';
 
   const updatedStats = window.GTCStats.recordLoss(currentDifficulty, activeQuestion.id);
 
-  feedbackEl.innerHTML = `❌ <strong>Out of clues!</strong> The correct answer was <strong>${activeQuestion.answer}</strong>.`;
+  feedbackEl.innerHTML = `❌ <strong>Out of clues!</strong> Correct answer was <strong>${activeQuestion.answer}</strong>.`;
   feedbackEl.className = 'feedback-error';
 }
 
@@ -236,7 +237,7 @@ function startTimer() {
     updateTimerUI();
     if (timeLeft <= 0) {
       stopTimer();
-      feedbackEl.innerHTML = `⏰ <strong>Time's up!</strong> The correct answer was <strong>${activeQuestion.answer}</strong>.`;
+      feedbackEl.innerHTML = `⏰ <strong>Time's up!</strong> Correct answer was <strong>${activeQuestion.answer}</strong>.`;
       feedbackEl.className = 'feedback-error';
       handleLoss();
     }
