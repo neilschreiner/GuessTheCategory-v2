@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess The Category v2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <header>
+      <h1>Guess The Category</h1>
+      <div class="header-controls">
+        <select id="difficulty-select" aria-label="Select Difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+          <option value="ultra">Ultra (45s)</option>
+        </select>
+        <button id="open-stats-btn" class="icon-btn" title="View Statistics">📊</button>
+      </div>
+    </header>
+
+    <div id="timer-display" class="timer-box" style="display: none;">
+      ⏱ Time Remaining: 45s
+    </div>
+
+    <main class="clues-container" id="clues-container">
+      <!-- Clue cards rendered dynamically via JS -->
+    </main>
+
+    <section class="input-section">
+      <input type="text" id="guess-input" placeholder="Type your guess here..." autocomplete="off">
+      <button id="submit-btn" class="btn-primary">Submit</button>
+      <button id="next-btn" class="btn-secondary" style="display: none;">Next Category ➔</button>
+    </section>
+
+    <div id="feedback" class="feedback-area"></div>
+  </div>
+
+  <!-- Stats Modal -->
+  <div id="stats-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Game Statistics</h2>
+        <button id="close-stats-btn" class="close-btn">&times;</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-played">0</div>
+          <div class="stat-label">Played</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-win-rate">0%</div>
+          <div class="stat-label">Win %</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-streak">0</div>
+          <div class="stat-label">Current Streak</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-max-streak">0</div>
+          <div class="stat-label">Best Streak</div>
+        </div>
+      </div>
+
+      <div class="distribution-section">
+        <h3>Guess Distribution (Clue # Won)</h3>
+        <div class="dist-row">
+          <span>1:</span>
+          <div class="dist-bar-bg"><div id="dist-bar-1" class="dist-bar-fill"><span id="dist-count-1">0</span></div></div>
+        </div>
+        <div class="dist-row">
+          <span>2:</span>
+          <div class="dist-bar-bg"><div id="dist-bar-2" class="dist-bar-fill"><span id="dist-count-2">0</span></div></div>
+        </div>
+        <div class="dist-row">
+          <span>3:</span>
+          <div class="dist-bar-bg"><div id="dist-bar-3" class="dist-bar-fill"><span id="dist-count-3">0</span></div></div>
+        </div>
+        <div class="dist-row">
+          <span>4:</span>
+          <div class="dist-bar-bg"><div id="dist-bar-4" class="dist-bar-fill"><span id="dist-count-4">0</span></div></div>
+        </div>
+        <div class="dist-row">
+          <span>5:</span>
+          <div class="dist-bar-bg"><div id="dist-bar-5" class="dist-bar-fill"><span id="dist-count-5">0</span></div></div>
+        </div>
+      </div>
+
+      <button id="reset-stats-btn" class="btn-danger-outline">Reset Stats</button>
+    </div>
+  </div>
+
+  <script src="stats.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
